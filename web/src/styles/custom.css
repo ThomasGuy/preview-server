@@ -1,0 +1,18 @@
+.global {
+  --red: #ff4949;
+  --black: rgb(107, 68, 32);
+  --yellow: #ffc600;
+  --white: #fff;
+  --offWhite: #ededed;
+  --grey: #d8a7a7;
+  --maxWidth: 1280px;
+  --bs: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+  --bg: rgb(102, 56, 25);
+  --bg_link: hsl(34, 75%, 51%);
+  --title: #442502;
+  --link_hover: rgba(134, 80, 9, 0.2);
+}
+
+.page {
+  color: rgb(143, 89, 18);
+}
