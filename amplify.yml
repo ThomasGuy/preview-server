@@ -21,11 +21,12 @@ applications:
       cache:
         paths:
           - node_modules/**/*
+
+  - appRoot: studio
     backend:
       phases:
         preBuild:
           commands:
-            - cd ../studio
             - npm install
         build:
           commands:
