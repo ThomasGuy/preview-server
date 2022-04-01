@@ -1,6 +1,6 @@
 version: 1
 applications:
-  - appRoot: .
+  - appRoot: web
     env:
       variables:
         SANITY_PROJECT_ID: 1vz4sc35
@@ -10,7 +10,7 @@ applications:
       phases:
         preBuild:
           commands:
-            - cd studio
+            - cd ../studio
             - npm install
             - sanity upgrade
         build:
@@ -20,7 +20,6 @@ applications:
       phases:
         preBuild:
           commands:
-            - cd web
             - npm install
         build:
           commands:
