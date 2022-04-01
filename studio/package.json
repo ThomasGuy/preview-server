@@ -11,6 +11,9 @@
     "build": "sanity build",
     "deploy": "sanity deploy && sanity graphql deploy --playground"
   },
+  "engines": {
+    "node": ">=14.16.0"
+  },
   "keywords": [
     "sanity"
   ],

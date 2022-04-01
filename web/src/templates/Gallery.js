@@ -1,5 +1,4 @@
 /* eslint-disable no-param-reassign */
-/* eslint-disable react/prop-types */
 
 import { graphql } from 'gatsby';
 import React, {
