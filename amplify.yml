@@ -12,7 +12,6 @@ applications:
           commands:
             - cd ../studio
             - npm install
-            - sanity upgrade
         build:
           commands:
             - npm run build
