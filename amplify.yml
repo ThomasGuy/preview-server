@@ -29,4 +29,4 @@ applications:
             - npm install
         build:
           commands:
-            - npm run build
+            - sanity build
