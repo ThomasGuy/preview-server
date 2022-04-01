@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-front",
+  "name": "preview-server-gatsby-web",
   "version": "1.0.0",
   "private": true,
-  "description": "A Gallery template",
+  "description": "A Gallery site",
   "author": "Thomasguy",
   "keywords": [
     "gatsby"
