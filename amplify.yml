@@ -1,5 +1,6 @@
 version: 1
 applications:
+  - appRoot: .
   - env:
       variables:
         SANITY_PROJECT_ID: 1vz4sc35
@@ -21,3 +22,12 @@ applications:
         paths:
           - node_modules/**/*
     appRoot: web
+  - backend:
+      phases:
+        preBuild:
+          commands:
+            - npm install
+        build:
+          commands:
+            - npm run build
+    appRoot: studio
