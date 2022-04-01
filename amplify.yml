@@ -1,0 +1,34 @@
+version: 1
+applications:
+  - appRoot: .
+    env:
+      variables:
+        SANITY_PROJECT_ID: 1vz4sc35
+        SANITY_DATASET: production
+        SNAITY_READ_TOKEN: sk3bgtflqXHmH8c1LKRlxS0OWqolQCxy045UMhfhgtKNkeyrypwUYeilOHVGSov5L3BQ3tCK5H5osVcKxPP7RxgTqd3XMl0ulfsdfp8M3XA3wqbZ6FAtcm3HZloZPFY4sAlFs2My0rTEWWN9y3wV0rdC9PEMSl1sKUHXlscGd69UYyJyaPqk
+    backend:
+      phases:
+        preBuild:
+          commands:
+            - cd studio
+            - npm install
+            - sanity upgrade
+        build:
+          commands:
+            - npm run build
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - cd web
+            - npm install
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: public
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*

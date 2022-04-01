@@ -36,8 +36,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: `/category/${slug}`,
       component: path.resolve(`src/templates/Gallery.js`),
       context: {
-        title: node.name,
         slug,
+        id: node.id,
+        title: node.name,
       },
     });
   });
