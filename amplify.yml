@@ -1,6 +1,7 @@
 version: 1
 applications:
   - appRoot: web
+    runtime: nodejs14.16
     env:
       variables:
         SANITY_PROJECT_ID: 1vz4sc35
