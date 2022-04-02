@@ -1,11 +1,9 @@
 const dotenv = require('dotenv');
+const clientConfig = require('./client-config');
 
 dotenv.config({
   path: `.env.${process.env.NODE_ENV || 'development'}`,
 });
-
-// eslint-disable-next-line import/first
-const clientConfig = require('./client-config');
 
 const token = process.env.SANITY_READ_TOKEN;
 const isProd = process.env.NODE_ENV === 'production';

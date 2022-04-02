@@ -9,7 +9,7 @@
   "scripts": {
     "start": "sanity start",
     "build": "sanity build",
-    "deploy": "sanity deploy && sanity graphql deploy --playground"
+    "deploy": "sanity deploy && sanity graphql deploy"
   },
   "engines": {
     "node": ">=16.0"
