@@ -1,35 +1,35 @@
 version: 1
 applications:
-  runtime: nodejs14.16
-  env:
-    variables:
-      SANITY_PROJECT_ID: 1vz4sc35
-      SANITY_DATASET: production
-  frontend:
-    appRoute: ./web
-    phases:
-      preBuild:
-        commands:
-          - npm install
-      build:
-        commands:
-          - npm run build
-    artifacts:
-      baseDirectory: public
-      files:
-        - '**/*'
-    cache:
-      paths:
-        - node_modules/**/*
-  backend:
-    appRoute: ./studio
-    phases:
-      preBuild:
-        commands:
-          - npm install
-      build:
-        commands:
-          - npm run build
-      postBuild:
-        commands:
-          - npm run deploy
+  - runtime: nodejs14.19.1
+  - appRoute: preview
+    env:
+      variables:
+        SANITY_PROJECT_ID: 1vz4sc35
+        SANITY_DATASET: production
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm install
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: public
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+    backend:
+      appRoute: preview/studio
+      phases:
+        preBuild:
+          commands:
+            - npm install
+        build:
+          commands:
+            - npm run build
+        postBuild:
+          commands:
+            - npm run deploy

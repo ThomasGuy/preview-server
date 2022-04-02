@@ -13,7 +13,7 @@ const isProd = process.env.NODE_ENV === 'production';
 module.exports = {
   siteMetadata: {
     title: 'Template Site',
-    siteURL: 'https://template.co.uk',
+    siteURL: 'https://twgyuy.co.uk',
     description: 'Gallery website',
     author: 'Thomas Guy <twguy.weddev@gmail.com>',
   },
