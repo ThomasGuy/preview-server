@@ -9,6 +9,8 @@ const clientConfig = require('./client-config');
 
 const token = process.env.SANITY_READ_TOKEN;
 const isProd = process.env.NODE_ENV === 'production';
+const previewEnabled =
+  (process.env.GATSBY_IS_PREVIEW || 'false').toLowerCase() === 'true';
 
 module.exports = {
   siteMetadata: {
@@ -25,7 +27,7 @@ module.exports = {
         token,
         watchMode: !isProd,
         useCdn: isProd,
-        overlayDrafts: !isProd && token,
+        overlayDrafts: !isProd || previewEnabled,
       },
     },
     'gatsby-plugin-styled-components',
