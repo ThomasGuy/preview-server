@@ -26,7 +26,6 @@ applications:
     phases:
       preBuild:
         commands:
-          - cd ./studio
           - npm install
       build:
         commands:
