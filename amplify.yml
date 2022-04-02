@@ -22,10 +22,10 @@ applications:
         paths:
           - node_modules/**/*
     backend:
-      appRoute: preview/studio
       phases:
         preBuild:
           commands:
+            - cd ../studio
             - npm install
         build:
           commands:
