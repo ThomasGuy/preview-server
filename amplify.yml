@@ -1,7 +1,7 @@
 version: 1
 applications:
   - runtime: nodejs14.19.1
-  - appRoute: preview/web
+  - appRoute: web
     env:
       variables:
         SANITY_PROJECT_ID: 1vz4sc35
