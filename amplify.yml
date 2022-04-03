@@ -20,15 +20,15 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-backend:
-  phases:
-    preBuild:
-      commands:
-        - cd studio
-        - npm install
-    build:
-      commands:
-        - npm run build
-    postBuild:
-      commands:
-        - npm run deploy
+# backend:
+#   phases:
+#     preBuild:
+#       commands:
+#         - cd studio
+#         - npm install
+#     build:
+#       commands:
+#         - npm run build
+#     postBuild:
+#       commands:
+#         - npm run deploy
