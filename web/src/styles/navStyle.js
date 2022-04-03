@@ -34,8 +34,8 @@ export const NavbarNavItem = styled.div`
     height: var(--button-size);
     background-color: var(--black);
     border-radius: 50%;
-    padding: 5px;
-    margin: 2px;
+    padding: 0.5rem;
+    margin: 0.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,8 +49,8 @@ export const NavbarNavItem = styled.div`
 
   svg {
     fill: var(--offWhite);
-    width: 25px;
-    height: 25px;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 `;
 

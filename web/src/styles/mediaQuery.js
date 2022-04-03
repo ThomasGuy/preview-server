@@ -1,14 +1,14 @@
-// these breakpoints refer to gallery layout with maw-width 350px
+// these breakpoints refer to gallery layout with max-width 35rem = 305px
 const breakpoints = {
-  xs: 320,
-  sm: 590,
-  md: 900,
-  lg: 1440,
-  xl: 1780,
+  xs: 32,
+  sm: 59,
+  md: 90,
+  lg: 144,
+  xl: 178,
 };
 
 export const mediaQuery = key => style =>
-  `@media only screen and (min-width: ${breakpoints[key]}px) { ${style} }`;
+  `@media only screen and (min-width: ${breakpoints[key]}rem) { ${style} }`;
 
 export const mediaQueryMax = key => style =>
-  `@media only screen and (max-width: ${breakpoints[key]}px) { ${style} }`;
+  `@media only screen and (max-width: ${breakpoints[key]}rem) { ${style} }`;

@@ -1,12 +1,11 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
-// import { getGatsbyImageData } from 'gatsby-source-sanity';
+import { getGatsbyImageData } from 'gatsby-source-sanity';
 import styled from 'styled-components';
 import { mediaQuery } from '../styles';
-// import { sanity } from '../../client-config';
+import { sanity } from '../../client-config';
 
-// const sanityConfig = { ...sanity };
-// console.log(sanityConfig);
+const sanityConfig = { ...sanity };
 
 const Box = styled.div`
   /* set max-width to same width as gatsbyImageData */
@@ -48,15 +47,17 @@ const SanityImageBox = ({
   dimensions = null,
 }) => {
   const trigger = mql.navChange;
-  // const imageData = getGatsbyImageData(image.asset.id, sanityConfig);
+  const imageData = getGatsbyImageData(image.asset.id, {}, sanityConfig);
   return (
     <Box>
       <GatsbyImage
-        image={image.asset.gatsbyImageData}
+        image={imageData}
         alt={alt}
         idx={idx}
         loading="eager"
-        imgStyle={show && { border: `${trigger ? '12px' : '18px'} solid #fff` }}
+        imgStyle={
+          show && { border: `${trigger ? '1.2rem' : '1.8rem'} solid #fff` }
+        }
       />
       {name && (
         <p>

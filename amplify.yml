@@ -1,5 +1,6 @@
 version: 1
 applications:
+  - branch: master
   - runtime: nodejs14.19.1
   - appRoute: web
     env:
