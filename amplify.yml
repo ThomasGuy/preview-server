@@ -23,7 +23,7 @@ frontend:
 backend:
   phases:
     commands:
-      - cd ./studio
+      - cd ../studio
       - npm install
     build:
       commands:
