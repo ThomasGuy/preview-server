@@ -1,10 +1,10 @@
 version: 1
 runtime: nodejs14.19.1
+env:
+  variables:
+    SANITY_PROJECT_ID: 1vz4sc35
+    SANITY_DATASET: production
 frontend:
-  env:
-    variables:
-      SANITY_PROJECT_ID: 1vz4sc35
-      SANITY_DATASET: production
   phases:
     preBuild:
       commands:
@@ -22,12 +22,13 @@ frontend:
       - node_modules/**/*
 backend:
   phases:
-    commands:
-      - cd ../studio
-      - npm install
+    preBuild:
+      commands:
+        - cd studio
+        - npm install
     build:
       commands:
         - npm run build
-    post-build:
+    postBuild:
       commands:
         - npm run deploy
