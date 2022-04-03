@@ -15,7 +15,7 @@
     "clean": "gatsby clean"
   },
   "engines": {
-    "node": ">=16.14.2"
+    "node": ">=14.19.0"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
