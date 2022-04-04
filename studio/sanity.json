@@ -2,7 +2,8 @@
   "root": true,
   "api": {
     "projectId": "1vz4sc35",
-    "dataset": "production"
+    "dataset": "production",
+    "apiVersion": "2022-04-01"
   },
   "project": {
     "name": "preview-server"
