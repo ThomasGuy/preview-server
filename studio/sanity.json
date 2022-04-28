@@ -14,7 +14,8 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "@sanity/dashboard"
+    "@sanity/dashboard",
+    "aws-deploy"
   ],
   "env": {
     "development": {
