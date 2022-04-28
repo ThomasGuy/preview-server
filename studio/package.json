@@ -1,6 +1,6 @@
 {
   "name": "sanity_studio_backend",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "description": "A gallery website template",
   "main": "package.json",
@@ -12,7 +12,7 @@
     "deploy": "sanity deploy && sanity graphql deploy"
   },
   "engines": {
-    "node": ">=16.0"
+    "node": ">=14.16"
   },
   "keywords": [
     "sanity"
