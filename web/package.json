@@ -12,6 +12,7 @@
     "develop": "NODE_ENV=development gatsby develop",
     "start": "npm run develop",
     "serve": "NODE_ENV=production gatsby serve --host twguy.co.uk --port 80",
+    "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION --paths \"/*\"",
     "clean": "gatsby clean"
   },
   "engines": {

@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 
 dotenv.config({
-  path: `.env.${process.env.NODE_ENV || 'development'}`,
+  path: `.env.${process.env.NODE_ENV || 'production'}`,
 });
 
 const clientConfig = require('./client-config');
@@ -44,6 +44,12 @@ module.exports = {
         params: {
           // In case you want to add any custom content types: https://github.com/jariz/gatsby-plugin-s3/blob/master/recipes/custom-content-type.md
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: targetAddress.href.slice(0, -1),
       },
     },
     'gatsby-plugin-styled-components',
