@@ -3,8 +3,12 @@ env:
   variables:
     SANITY_PROJECT_ID: '1vz4sc35'
     SANITY_DATASET: 'production'
-    SANITY_READ_TOKEN: 'sk51egLYR3wTXFzAMb89h37RBcgMNomKSW9Q5EAZumVFQ78YdOmwbqkgnfDwesp2g0I4btUcegl9d6QKnAL7M3GBha2I3qEFzJUt1NFtxKZ0b6kg8asbLsKcdVKK7ispoW74Gb7M7J9htx1iaVlWbxVFuVANQsgGL4jb9lffQ02WHd5KOKLo'
-    GATSBY_IS_PREVIEW: true
+    ENABLE_GATSBY_REFRESH_ENDPOINT: 'true'
+    TARGET_BUCKET_NAME: 'twguy.co.uk'
+    TARGET_ADDRESS: 'https://twguy.co.uk'
+    AWS_REGION: 'eu-west-2'
+    # SANITY_READ_TOKEN: 'sk51egLYR3wTXFzAMb89h37RBcgMNomKSW9Q5EAZumVFQ78YdOmwbqkgnfDwesp2g0I4btUcegl9d6QKnAL7M3GBha2I3qEFzJUt1NFtxKZ0b6kg8asbLsKcdVKK7ispoW74Gb7M7J9htx1iaVlWbxVFuVANQsgGL4jb9lffQ02WHd5KOKLo'
+    # GATSBY_IS_PREVIEW: true
 phases:
   install:
     runtime-versions:
@@ -21,7 +25,7 @@ phases:
       - npm run build
   post_build:
   commands:
-    - 'aws s3 sync "public/" "s3://preview.twguy.co.uk" --delete --acl "public-read"'
+    - 'aws s3 sync "public/" "s3://twguy.co.uk" --delete --acl "public-read"'
 artifacts:
   baseDirectory: web/public
   files:
