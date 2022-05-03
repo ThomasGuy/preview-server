@@ -1,4 +1,4 @@
-version: 1.0.0
+version: 1.0
 env:
   variables:
     SANITY_PROJECT_ID: '1vz4sc35'
