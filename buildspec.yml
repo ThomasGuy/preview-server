@@ -7,8 +7,6 @@ env:
     TARGET_BUCKET_NAME: 'twguy.co.uk'
     TARGET_ADDRESS: 'https://twguy.co.uk'
     AWS_REGION: 'eu-west-2'
-    # SANITY_READ_TOKEN: 'sk51egLYR3wTXFzAMb89h37RBcgMNomKSW9Q5EAZumVFQ78YdOmwbqkgnfDwesp2g0I4btUcegl9d6QKnAL7M3GBha2I3qEFzJUt1NFtxKZ0b6kg8asbLsKcdVKK7ispoW74Gb7M7J9htx1iaVlWbxVFuVANQsgGL4jb9lffQ02WHd5KOKLo'
-    # GATSBY_IS_PREVIEW: true
 phases:
   install:
     runtime-versions:
@@ -18,16 +16,16 @@ phases:
       - 'npm install -g gatsby'
   preBuild:
     commands:
-      - cd web
+      - 'cd web'
       - 'npm ci --production'
   build:
     commands:
-      - npm run build
+      - 'npm run build'
   post_build:
     commands:
       - 'aws s3 sync "public/" "s3://twguy.co.uk" --delete --acl "public-read"'
 artifacts:
-  baseDirectory: web/public
+  baseDirectory: 'web/public'
   files:
     - '**/*'
   discard-paths: no
