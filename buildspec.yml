@@ -1,4 +1,4 @@
-version: 1.0
+version: 1.1.0
 env:
   variables:
     SANITY_PROJECT_ID: '1vz4sc35'
@@ -25,7 +25,7 @@ phases:
     commands:
       - 'aws s3 sync "public/" "s3://twguy.co.uk" --delete --acl "public-read"'
 artifacts:
-  baseDirectory: 'web/public'
+  baseDirectory: web/public
   files:
     - '**/*'
   discard-paths: no
