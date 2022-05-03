@@ -1,4 +1,4 @@
-version: 1.1
+version: 0.2
 env:
   variables:
     SANITY_PROJECT_ID: '1vz4sc35'
@@ -10,7 +10,7 @@ env:
 phases:
   install:
     runtime-versions:
-      nodejs: 14.19.1
+      nodejs: 14.19.x
     commands:
       - 'touch .npmignore'
       - 'npm install -g gatsby'
