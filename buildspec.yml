@@ -24,8 +24,8 @@ phases:
     commands:
       - npm run build
   post_build:
-  commands:
-    - 'aws s3 sync "public/" "s3://twguy.co.uk" --delete --acl "public-read"'
+    commands:
+      - 'aws s3 sync "public/" "s3://twguy.co.uk" --delete --acl "public-read"'
 artifacts:
   baseDirectory: web/public
   files:
