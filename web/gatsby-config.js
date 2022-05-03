@@ -11,6 +11,10 @@ const isProd = process.env.NODE_ENV === 'production';
 const previewEnabled =
   (process.env.GATSBY_IS_PREVIEW || 'false').toLowerCase() === 'true';
 
+const targetAddress = new URL(
+  process.env.TARGET_ADDRESS || `https://twguy.co.uk`
+);
+
 module.exports = {
   siteMetadata: {
     title: 'Template Site',
@@ -29,12 +33,24 @@ module.exports = {
         overlayDrafts: !isProd || previewEnabled,
       },
     },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: process.env.TARGET_BUCKET_NAME || 'fake-bucket',
+        region: process.env.AWS_REGION,
+        protocol: targetAddress.protocol.slice(0, -1),
+        hostname: targetAddress.hostname,
+        acl: null,
+        params: {
+          // In case you want to add any custom content types: https://github.com/jariz/gatsby-plugin-s3/blob/master/recipes/custom-content-type.md
+        },
+      },
+    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    // 'gatsby-plugin-sitemap',
     'gatsby-plugin-react-svg',
     {
       resolve: `gatsby-plugin-typography`,

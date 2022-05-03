@@ -1,44 +1,33 @@
 version: 1.0.0
-runtime: nodejs14.19.1
 env:
   variables:
     SANITY_PROJECT_ID: '1vz4sc35'
     SANITY_DATASET: 'production'
     SANITY_READ_TOKEN: 'sk51egLYR3wTXFzAMb89h37RBcgMNomKSW9Q5EAZumVFQ78YdOmwbqkgnfDwesp2g0I4btUcegl9d6QKnAL7M3GBha2I3qEFzJUt1NFtxKZ0b6kg8asbLsKcdVKK7ispoW74Gb7M7J9htx1iaVlWbxVFuVANQsgGL4jb9lffQ02WHd5KOKLo'
-    GATSBY_IS_PREVIEW: True
-frontend:
-  phases:
-    install:
-      commands:
-        - 'touch .npmignore'
-        - 'npm install -g gatsby'
-    preBuild:
-      commands:
-        - cd web
-        - npm install
-    build:
-      commands:
-        - npm run build
-    post_build:
+    GATSBY_IS_PREVIEW: true
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14.19.1
     commands:
-      - 'aws s3 sync "public/" "s3://preview.buriramvillas.com" --delete --acl "public-read"'
-  artifacts:
-    baseDirectory: web/public
-    files:
-      - '**/*'
-    discard-paths: yes
-  cache:
-    paths:
-      - node_modules/**/*
-# backend:
-#   phases:
-#     preBuild:
-#       commands:
-#         - cd studio
-#         - npm install
-#     build:
-#       commands:
-#         - npm run build
-#     postBuild:
-#       commands:
-#         - npm run deploy
+      - 'touch .npmignore'
+      - 'npm install -g gatsby'
+  preBuild:
+    commands:
+      - cd web
+      - 'npm ci --production'
+  build:
+    commands:
+      - npm run build
+  post_build:
+  commands:
+    - 'aws s3 sync "public/" "s3://preview.twguy.co.uk" --delete --acl "public-read"'
+artifacts:
+  baseDirectory: web/public
+  files:
+    - '**/*'
+  discard-paths: no
+cache:
+  paths:
+    - '.cache/*'
+    - 'public/*'
