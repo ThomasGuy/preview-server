@@ -11,6 +11,7 @@ phases:
   install:
     commands:
       - 'touch .npmignore'
+      - n 14.19.1
       - 'npm install -g gatsby'
   pre_build:
     commands:
