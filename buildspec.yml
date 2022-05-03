@@ -10,7 +10,7 @@ env:
 phases:
   install:
     runtime-versions:
-      nodejs: 14.19.x
+      nodejs: 16
     commands:
       - 'touch .npmignore'
       - 'npm install -g gatsby'
