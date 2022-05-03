@@ -14,7 +14,7 @@ phases:
     commands:
       - 'touch .npmignore'
       - 'npm install -g gatsby'
-  preBuild:
+  pre_Build:
     commands:
       - 'cd web'
       - 'npm ci --production'
