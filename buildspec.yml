@@ -1,4 +1,5 @@
 version: 0.2
+
 env:
   variables:
     SANITY_PROJECT_ID: '1vz4sc35'
@@ -7,6 +8,7 @@ env:
     TARGET_BUCKET_NAME: 'twguy.co.uk'
     TARGET_ADDRESS: 'https://twguy.co.uk'
     AWS_REGION: 'eu-west-2'
+
 phases:
   install:
     commands:
@@ -16,13 +18,14 @@ phases:
   pre_build:
     commands:
       - 'cd web'
-      - 'npm ci --production'
+      - 'npm install'
   build:
     commands:
       - 'npm run build'
   post_build:
     commands:
       - 'aws s3 sync "public/" "s3://twguy.co.uk" --delete --acl "public-read"'
+
 artifacts:
   baseDirectory: web/public
   files:
