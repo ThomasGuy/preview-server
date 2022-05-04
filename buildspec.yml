@@ -30,7 +30,7 @@ artifacts:
   baseDirectory: web/public
   files:
     - '**/*'
-  discard-paths: no
+  discard-paths: yes
 cache:
   paths:
     - '.cache/*'
