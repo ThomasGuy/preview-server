@@ -4,11 +4,6 @@ env:
   variables:
     SANITY_PROJECT_ID: '1vz4sc35'
     SANITY_DATASET: 'production'
-    ENABLE_GATSBY_REFRESH_ENDPOINT: 'true'
-    CLOUDFRONT_DISTRIBUTION: E2KW7XXGN3F833
-    TARGET_BUCKET_NAME: 'twguy.co.uk'
-    TARGET_ADDRESS: 'https://twguy.co.uk'
-    AWS_REGION: 'eu-west-2'
 
 phases:
   install:
