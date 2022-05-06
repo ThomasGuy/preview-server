@@ -4,6 +4,7 @@ env:
   variables:
     SANITY_PROJECT_ID: '1vz4sc35'
     SANITY_DATASET: 'production'
+    S3_BUCKET: 'twguy.co.uk'
 
 phases:
   install:
@@ -20,7 +21,7 @@ phases:
       - 'npm run build'
   post_build:
     commands:
-      - 'aws s3 sync "public/" "s3://twguy.co.uk" --delete "public-read"'
+      - 'aws s3 sync "public/" "s3://${S3_BUCKET}" --delete "public-read"'
 
 artifacts:
   baseDirectory: 'web/public'
