@@ -20,10 +20,10 @@ phases:
       - 'npm run build'
   post_build:
     commands:
-      - 'aws s3 sync "public/" "s3://twguy.co.uk" --delete --acl "public-read"'
+      - 'aws s3 sync "public/" "s3://twguy.co.uk" --delete "public-read"'
 
 artifacts:
-  baseDirectory: web/public
+  baseDirectory: 'web/public'
   files:
     - '**/*'
   discard-paths: no
