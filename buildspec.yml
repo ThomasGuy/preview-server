@@ -22,7 +22,7 @@ phases:
   post_build:
     commands:
       - 'npm run deploy'
-      - 'aws s3 sync "public/" "s3://${S3_BUCKET}" --delete --acl "bucket-owner-full-control"'
+      # - 'aws s3 sync "public/" "s3://${S3_BUCKET}" --delete --acl "bucket-owner-full-control"'
 
 artifacts:
   baseDirectory: 'web/public'
