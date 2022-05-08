@@ -16,16 +16,17 @@ import SEO from '../components/SEO';
 import { GalleryLayout } from '../styles';
 import { useBreakpoint } from '../hooks/useBreakpoint';
 
-const Gallery = ({ data }) => {
+const Gallery = ({ data, pageContext }) => {
   const { setTitle } = useContext(TitleContext);
   const [openModal, setOpenModal] = useState(false);
   const [index, _setIndex] = useState(-1);
   const indexRef = useRef(index);
   const mql = useBreakpoint();
+  const { title } = pageContext;
 
   useEffect(() => {
-    setTitle(data.title.name);
-  }, [setTitle, data.title.name]);
+    setTitle(title);
+  }, [setTitle, title]);
 
   const propsArray = data.allSanityPicture.edges.map(({ node }) => {
     const { image, name, dimensions, id, category } = node;
@@ -100,7 +101,7 @@ const Gallery = ({ data }) => {
 
   return (
     <GalleryLayout onClick={clickHandler}>
-      <SEO title={data.title.name} />
+      <SEO title={title} />
       {pictures.map(pic => {
         const { image, id } = pic.props;
         return (
